@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "a28a6d77-6bc0-418d-be8d-f7daf0169873",
+    "name": "local",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-10-02T01:43:59.996Z",
+    "modified": "2022-10-02T01:55:05.678Z",
+    "data": [
+      {
+        "name": "protocol",
+        "value": "http"
+      },
+      {
+        "name": "domain",
+        "value": "127.0.0.1:8000/api"
+      },
+      {
+        "name": "base_url",
+        "value": "{{protocol}}://{{domain}}"
+      }
+    ]
+  }
+]

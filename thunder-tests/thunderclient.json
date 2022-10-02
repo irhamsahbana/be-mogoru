@@ -1,0 +1,95 @@
+[
+  {
+    "_id": "bbc329d1-40bc-478f-883e-556e44c098c6",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "8ea250d3-b88a-45c2-a74e-70e5974ad8b0",
+    "name": "Login",
+    "url": "{{base_url}}/auth/login",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-10-02T01:46:46.058Z",
+    "modified": "2022-10-02T05:21:51.138Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "86787066-fa7b-4805-b8f1-e96a8b8abf09",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "8ea250d3-b88a-45c2-a74e-70e5974ad8b0",
+    "name": "logout all devices",
+    "url": "{{base_url}}/auth/logout-all-devices",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-10-02T03:53:25.429Z",
+    "modified": "2022-10-02T06:47:43.937Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "97670aac-2092-4048-9426-35d3a76d6e1c|2VRseHmTQ3VNreV6euIW3azXmQLDW54Q0aebOy1R"
+    },
+    "tests": []
+  },
+  {
+    "_id": "58003cb8-ee96-43a9-8747-0e0906a9f3b5",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "8ea250d3-b88a-45c2-a74e-70e5974ad8b0",
+    "name": "logout current device only",
+    "url": "{{base_url}}/auth/logout",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-10-02T06:50:37.949Z",
+    "modified": "2022-10-02T06:52:49.865Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "97672aaa-8cc3-456b-bb61-093b5acd6efb|6qXpF6iuJRBzwE0g2IzN3smhXFZl9E5FUxl3c6xC"
+    },
+    "tests": []
+  },
+  {
+    "_id": "93f75f5b-9827-468a-a447-36a95098859e",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "",
+    "name": "get cities",
+    "url": "{{base_url}}/cities",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-10-02T08:42:16.915Z",
+    "modified": "2022-10-02T08:52:59.036Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  }
+]
