@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\{
     AuthController,
+    CategoryController,
     GetCitiesController
 };
 
@@ -21,7 +22,15 @@ use App\Http\Controllers\Api\{
 Route::middleware('auth:sanctum')->group(function() {
     Route::get('auth/logout', [AuthController::class, 'logout']);
     Route::get('auth/logout-all-devices', [AuthController::class, 'logoutAll']);
+
+    Route::get('categories', [CategoryController::class, 'index']);
+
+    /**
+     * Dangerous route, only for development purpose
+     * Should be removed in production
+     */
+    Route::get('seed-provinces-cities', [GetCitiesController::class, 'provincesAndCities']);
 });
 
+
 Route::post("auth/login", [AuthController::class, 'attempt']);
-// Route::get('seed-provinces-cities', [GetCitiesController::class, 'ProvincesAndCities']);

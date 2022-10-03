@@ -10,9 +10,9 @@ abstract class AbstractFinder
 
     protected $query;
     protected $keyword;
-    protected $isUsePagination = true;
+    protected bool $isUsePagination = false;
     protected $orderBy;
-    protected $orderType = 'asc';
+    protected string $orderType = 'asc';
 
     private $page = 1;
     private $perPage = 10;
@@ -20,6 +20,11 @@ abstract class AbstractFinder
     public function setPage($page)
     {
         $this->page = $page;
+    }
+
+    public function isUsePagination()
+    {
+        return $this->isUsePagination;
     }
 
     protected function getPage()
@@ -50,7 +55,7 @@ abstract class AbstractFinder
             $this->orderType = $orderType;
     }
 
-    public function setIsUsePagination($isUsePagination)
+    public function usePagination($isUsePagination)
     {
         $this->isUsePagination = $isUsePagination;
     }

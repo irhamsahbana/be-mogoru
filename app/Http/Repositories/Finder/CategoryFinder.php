@@ -55,7 +55,7 @@ class CategoryFinder extends AbstractFinder
     protected function doQuery()
     {
         foreach ($this->groups as $group) {
-            if ($group == 'permission_groups')
+            if ($group === 'permission_groups')
                 $this->filterByAccessControl('access-right-read');
             else
                 $this->filterByAccessControl(sprintf('category-%s-read', $group), sprintf('Tidak memiliki hak akses untuk melihat data %s', $group));

@@ -5,8 +5,6 @@ namespace App\Libs;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Log;
 
-// use Illuminate\Support\Carbon;
-
 class Response
 {
     private array $headers = [];
@@ -22,14 +20,24 @@ class Response
     ): \Illuminate\Http\JsonResponse {
         $statusText = HttpResponse::$statusTexts[$status] ?? 'Unknown';
 
+        $data = (array) $data;
+        $pagination = $data['pagination'] ?? null;
+        if ($pagination) {
+            unset($data['pagination']);
+        }
+
         $response = [
             'code' => $status,
             'status' => $statusText,
             'is_error' => $status >= HttpResponse::HTTP_BAD_REQUEST,
             'message' => $message,
             'data' => $data,
-            // 'timestamp' => Carbon::now()->toDateTimeString(),
         ];
+
+        if ($pagination) {
+            $response['pagination'] = $pagination;
+        }
+
 
         $exception = $this->exception($status, $excep, $file, $line, $trace);
 

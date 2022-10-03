@@ -2,6 +2,14 @@ ID,CATEGORY_ID,NAME,LABEL,NOTES,GROUP_BY
 8cb84420-1882-4e43-bf84-4d918edd2363,,administrator,Administrator,Administrator,people
 127ff3e3-7b6b-4f88-8087-4b9468e65267,,learner,Mahasiswa,Mahasiswa,people
 42f77d10-af75-451a-a18c-14aab7d7723b,,lecturer,Dosen,Dosen,people
+d297751e-5558-4717-ad6f-5d14123a5bc5,,category-provinces-create,category-provinces-create,Kategori Provinsi - Buat,permissions
+46a42f10-78eb-4f7a-8e6e-4c6c1df2bfcc,,category-provinces-read,category-provinces-read,Kategori Provinsi - Baca,permissions
+3c012159-95a6-401e-9019-368293c2d6fe,,category-provinces-update,category-provinces-update,Kategori Provinsi - Ubah,permissions
+3a0ec045-f74a-4c79-aa3a-78a196857d28,,category-provinces-delete,category-provinces-delete,Kategori Provinsi - Hapus,permissions
+9d31eec8-9bc5-430a-a303-b4d98785d4d8,,category-cities-create,category-cities-create,Kategori Kota - Buat,permissions
+f8c62ebb-5d9d-40d1-a748-d3c1afc5abd6,,category-cities-read,category-cities-read,Kategori Kota - Baca,permissions
+9729f079-660a-4ab2-bcaa-6f4e1a7516c3,,category-cities-update,category-cities-update,Kategori Kota - Ubah,permissions
+7b25031b-c050-4672-9fb4-0dc1822f366a,,category-cities-delete,category-cities-delete,Kategori Kota - Hapus,permissions
 fb70b16a-4339-4dfd-8a4f-0b3f0f5179e8,,category-semesters-create,category-semester-create,Kategori Semester - Buat,permissions
 95f6c54d-0c8e-4ba0-9715-c08fcd548e2e,,category-semesters-read,category-semester-read,Kategori Semester - Baca,permissions
 d6f0d919-a6f2-43d5-a252-4e804f42dee4,,category-semesters-update,category-semester-update,Kategori Semester - Ubah,permissions

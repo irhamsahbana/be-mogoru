@@ -2,13 +2,14 @@
 
 namespace App\Libs;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class AbstractAccessControl
 {
     protected $model;
 
-    public function __construct(Model $model)
+    public function __construct(Authenticatable $model)
     {
         $this->model = $model;
     }

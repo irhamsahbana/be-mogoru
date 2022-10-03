@@ -11,7 +11,7 @@ use Str;
 
 class GetCitiesController extends Controller
 {
-    public function ProvincesAndCities()
+    public function provincesAndCities()
     {
         $provinces = Http::get('https://dev.farizdotid.com/api/daerahindonesia/provinsi')->json();
         $provinces = $provinces['provinsi'];
