@@ -18,25 +18,35 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $csvFilePath = storage::disk('database')->path('csv/categories.csv');
+       $csvList = [
+        storage::disk('database')->path('csv/categories.csv'),
+        storage::disk('database')->path('csv/provinces-cities.csv'),
+        storage::disk('database')->path('csv/courses-course_levels.csv')
+       ];
 
+       foreach ($csvList as $csvFilePath) {
+         $this->generics($csvFilePath);
+       }
+    }
+
+    public function generics($path)
+    {
         $csv = new \ParseCsv\Csv();
-        $csv->auto($csvFilePath);
+        $csv->auto($path);
 
         $categories =  $csv->data;
 
         foreach ($categories as $category) {
-            Category::create([
-                'id' => $category['ID'],
-                'category_id' => $category['CATEGORY_ID'] == "" ? null : $category['CATEGORY_ID'],
-                'name' => $category['NAME'],
-                'group_by' => $category['GROUP_BY'],
-                'label' => $category['LABEL'],
-                'notes' => $category['NOTES'],
-
-                'created_at' => \Carbon\Carbon::now(),
-                'updated_at' => null,
-            ]);
+            Category::updateOrCreate(
+                ['id' => $category['ID']],
+                [
+                    'category_id' => $category['CATEGORY_ID'] == "" ? null : $category['CATEGORY_ID'],
+                    'name' => $category['NAME'],
+                    'group_by' => $category['GROUP_BY'],
+                    'label' => $category['LABEL'],
+                    'notes' => $category['NOTES'] == "" ? null : $category['NOTES'],
+                ]
+            );
         }
     }
 }

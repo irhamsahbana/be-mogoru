@@ -14,40 +14,40 @@ abstract class AbstractFinder
     protected $orderBy;
     protected string $orderType = 'asc';
 
-    private $page = 1;
-    private $perPage = 10;
+    private int $page = 1;
+    private int $perPage = 10;
 
-    public function setPage($page)
+    public function setPage(int $page) : void
     {
         $this->page = $page;
     }
 
-    public function isUsePagination()
+    public function isUsePagination() : bool
     {
         return $this->isUsePagination;
     }
 
-    protected function getPage()
+    protected function getPage() : int
     {
         return $this->page;
     }
 
-    public function setPerPage($perPage)
+    public function setPerPage(int $perPage) : void
     {
         $this->perPage = $perPage;
     }
 
-    protected function getPerPage()
+    protected function getPerPage() : int
     {
         return $this->perPage;
     }
 
-    public function setOrderBy(string $orderBy)
+    public function setOrderBy(string $orderBy) : void
     {
         $this->orderBy = $orderBy;
     }
 
-    public function setOrderType($orderType)
+    public function setOrderType($orderType) : void
     {
         $orderType = strtolower($orderType);
 
@@ -55,7 +55,7 @@ abstract class AbstractFinder
             $this->orderType = $orderType;
     }
 
-    public function usePagination($isUsePagination)
+    public function usePagination(bool $isUsePagination) : void
     {
         $this->isUsePagination = $isUsePagination;
     }

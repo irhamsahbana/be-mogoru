@@ -23,6 +23,11 @@ class CategoryController extends Controller
         if(isset($request->order_type))
             $finder->setOrderType($request->order_type);
 
+        if(isset($request->parent_id))
+            $finder->setParentId($request->parent_id);
+        else
+            $finder->setParentId(null);
+
         if(isset($request->paginate)) {
             $finder->usePagination($request->paginate);
 

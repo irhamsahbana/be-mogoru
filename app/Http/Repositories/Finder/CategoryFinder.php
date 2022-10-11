@@ -6,16 +6,25 @@ use App\Models\Category as Model;
 
 class CategoryFinder extends AbstractFinder
 {
-    protected $groups = [];
+    protected array $groups = [];
 
     public function __construct()
     {
         $this->query = Model::select('id', 'name', 'group_by', 'label', 'notes');
     }
 
-    public function setGroup($groups)
+    public function setGroup(string $groups)
     {
         $this->groups = explode(",", $groups);
+    }
+
+    public function setParentId(?string $parentId)
+    {
+        if(!empty($parentId)) {
+            $this->query->where('categories.category_id', $parentId);
+        } else {
+            $this->query->whereNull('categories.category_id');
+        }
     }
 
     public function whereKeyword()
