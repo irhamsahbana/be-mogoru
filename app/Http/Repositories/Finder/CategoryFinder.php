@@ -52,13 +52,17 @@ class CategoryFinder extends AbstractFinder
             case 'label':
                 $this->query->orderBy('label', $this->orderType);
                 break;
+            case 'group_by':
+                $this->query->orderBy('group_by', $this->orderType);
+                break;
+            case 'notes':
+                $this->query->orderBy('notes', $this->orderType);
         }
     }
 
     private function whereGroups()
     {
-        if (count($this->groups) > 0)
-            $this->query->whereIn('group_by', $this->groups);
+        $this->query->whereIn('group_by', $this->groups);
     }
 
     protected function doQuery()

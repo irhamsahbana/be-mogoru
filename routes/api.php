@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\{
     AuthController,
     CategoryController,
-    GetCitiesController
+    TutorController,
+    // GetCitiesController
 };
 
 /*
@@ -25,11 +26,13 @@ Route::middleware('auth:sanctum')->group(function() {
 
     Route::get('categories', [CategoryController::class, 'index']);
 
+    Route::put('tutors', [TutorController::class, 'upsert']);
+
     /**
      * Dangerous route, only for development purpose
      * Should be removed in production
      */
-    Route::get('seed-provinces-cities', [GetCitiesController::class, 'provincesAndCities']);
+    // Route::get('seed-provinces-cities', [GetCitiesController::class, 'provincesAndCities']);
 });
 
 

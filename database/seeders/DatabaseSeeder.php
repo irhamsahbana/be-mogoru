@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(CategorySeeder::class);
         $this->call(UserSeeder::class);
-        $this->call(PermissionGroupSeeder::class);
+        // $this->call(PermissionGroupSeeder::class);
 
         $this->DummySeeder();
     }
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(DummyCourseMasterSeeder::class);
         // $this->call(DummyCourseSeeder::class);
         // $this->call(DummyClassroomSeeder::class);
-        $this->call(DummyPersonSeeder::class);
+        // $this->call(DummyPersonSeeder::class);
         $this->call(DummyUserSeeder::class);
 
         // $this->call(DummyClassroomParticipantSeeder::class);

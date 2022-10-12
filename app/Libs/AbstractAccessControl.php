@@ -31,9 +31,6 @@ class AbstractAccessControl
      */
     public static function throwUnauthorizedException($message = null)
     {
-        if(empty($message))
-            $message = 'Anda tidak punya akses untuk aksi ini.';
-
         abort(403, $message);
     }
 }

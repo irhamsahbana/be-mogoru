@@ -50,12 +50,12 @@ class AccessControl extends AbstractAccessControl
         return $permissions->sortBy('name');
     }
 
-    public function hasAccess($name)
+    public function hasAccess($name) : bool
     {
         return !empty($this->permissions->where('name', $name)->first());
     }
 
-    public function hasAccesses($listName)
+    public function hasAccesses($listName) : bool
     {
         $isHasAccess = $this->permissions;
 

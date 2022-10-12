@@ -23,4 +23,16 @@ class Controller extends BaseController
 
         return null;
     }
+
+    public function filterByAccessControl($access, $message = null)
+    {
+        $accessControl = $this->getAccessControl();
+
+        if(empty($message))
+            $message = "Anda tidak punya akses untuk aksi ini [$access].";
+
+        if ($accessControl)
+            if(!$accessControl->hasAccess($access))
+                AccessControl::throwUnauthorizedException($message);
+    }
 }

@@ -1,45 +1,30 @@
 ID,CATEGORY_ID,NAME,LABEL,NOTES,GROUP_BY
-8cb84420-1882-4e43-bf84-4d918edd2363,,administrator,Administrator,Administrator,people
-127ff3e3-7b6b-4f88-8087-4b9468e65267,,learner,Mahasiswa,Mahasiswa,people
-42f77d10-af75-451a-a18c-14aab7d7723b,,lecturer,Dosen,Dosen,people
-d297751e-5558-4717-ad6f-5d14123a5bc5,,category-provinces-create,category-provinces-create,Kategori Provinsi - Buat,permissions
-46a42f10-78eb-4f7a-8e6e-4c6c1df2bfcc,,category-provinces-read,category-provinces-read,Kategori Provinsi - Baca,permissions
-3c012159-95a6-401e-9019-368293c2d6fe,,category-provinces-update,category-provinces-update,Kategori Provinsi - Ubah,permissions
-3a0ec045-f74a-4c79-aa3a-78a196857d28,,category-provinces-delete,category-provinces-delete,Kategori Provinsi - Hapus,permissions
-9d31eec8-9bc5-430a-a303-b4d98785d4d8,,category-cities-create,category-cities-create,Kategori Kota - Buat,permissions
-f8c62ebb-5d9d-40d1-a748-d3c1afc5abd6,,category-cities-read,category-cities-read,Kategori Kota - Baca,permissions
-9729f079-660a-4ab2-bcaa-6f4e1a7516c3,,category-cities-update,category-cities-update,Kategori Kota - Ubah,permissions
-7b25031b-c050-4672-9fb4-0dc1822f366a,,category-cities-delete,category-cities-delete,Kategori Kota - Hapus,permissions
-fb70b16a-4339-4dfd-8a4f-0b3f0f5179e8,,category-semesters-create,category-semester-create,Kategori Semester - Buat,permissions
-95f6c54d-0c8e-4ba0-9715-c08fcd548e2e,,category-semesters-read,category-semester-read,Kategori Semester - Baca,permissions
-d6f0d919-a6f2-43d5-a252-4e804f42dee4,,category-semesters-update,category-semester-update,Kategori Semester - Ubah,permissions
-b1941d8a-c09c-4ae0-a1f0-27966e48e93e,,category-semesters-delete,category-semester-delete,Kategori Semester - Hapus,permissions
-923fa56b-9ede-4133-aef7-0fd98d77b065,,course-master-create,course-master-create,Master Mata Kuliah - Buat,permissions
-fd5937cc-829a-42b7-a62e-a6cf0c7abb90,,course-master-read,course-master-read,Master Mata Kuliah - Baca,permissions
-00d91347-b63b-4c7c-af01-312e7f7ace83,,course-master-update,course-master-update,Master Mata Kuliah - Ubah,permissions
-8314ffec-52e4-4929-9474-cac1929b44e6,,course-master-delete,course-master-delete,Master Mata Kuliah - Hapus,permissions
-033fe8fa-c509-4ab1-963a-0941e3ebad13,,course-create,course-create,Mata Kuliah - Buat,permissions
-e814ce7b-05d1-409e-9376-e9595fbabed3,,course-read,course-read,Mata Kuliah - Baca,permissions
-d4b2dcac-12c4-49ed-b8cf-d18cf0fcbfb6,,course-update,course-update,Mata Kuliah - Ubah,permissions
-fdaac10b-91c4-4d12-a73c-7999dea8880c,,course-delete,course-delete,Mata Kuliah - Hapus,permissions
-096466c7-84cd-4da6-ac26-9eb8b744241d,,learner-create,learner-create,Mahasiswa - Buat,permissions
-8a6dd030-4007-48e6-b631-38a01415c83c,,learner-read,learner-read,Mahasiswa - Baca,permissions
-d8ff344f-e121-47a1-8372-6b4d2f4a98da,,learner-update,learner-update,Mahasiswa - Ubah,permissions
-3c9d8a12-f19d-4718-bd8b-6ad0fe33ddd3,,learner-delete,learner-delete,Mahasiswa - Hapus,permissions
-8be4f755-6a72-4f56-9a03-b68f1735c84e,,lecturer-create,lecturer-create,Dosen - Buat,permissions
-a59ac640-800a-4f9b-a3b2-dfbc9636acbe,,lecturer-read,lecturer-read,Dosen - Baca,permissions
-d67a9f56-964a-4fef-b541-56e77fd15a31,,lecturer-update,lecturer-update,Dosen - Ubah,permissions
-66bdad7d-9ca2-4519-ab25-e2842d6539c2,,lecturer-delete,lecturer-delete,Dosen - Hapus,permissions
-3ee56a10-db1f-4117-b1cc-8a4f0680ad41,,access-right-create,access-right-create,Hak Akses - Buat,permissions
-cab6736c-8eff-4fb1-9926-a53f11180818,,access-right-read,access-right-read,Hak Akses - Baca,permissions
-26ed57f8-1a9f-45fe-8428-07c1f6cc9535,,access-right-update,access-right-update,Hak Akses - Ubah,permissions
-db3f005c-6e22-4e64-9d5f-0d01cb8bd920,,access-right-delete,access-right-delete,Hak Akses - Hapus,permissions
-d2acf181-95e7-4bd7-b064-9aa07c5f9828,,classroom-create,classroom-create,Kelas - Buat,permissions
-87db9618-5ead-4ef1-b30e-4cb8ec765d65,,classroom-read,classroom-read,Kelas - Baca,permissions
-8606afba-24f2-441a-be3d-acaf7f93be58,,classroom-update,classroom-update,Kelas - Ubah,permissions
-75aa3a9c-1816-4144-a6ac-35b2fc9284d9,,classroom-delete,classroom-delete,Kelas - Hapus,permissions
-36796a06-3064-4dc3-96e8-0760cf76da5b,,administrator,Administrator,Administrator,permission_groups
-4a618e46-ce30-4fa7-a9fb-19fd0c232e68,,lecturer,Dosen,Dosen,permission_groups
-3eb1f730-4f0d-491d-afaa-04e79c3b140b,,learner,Mahasiswa,Mahasiswa,permission_groups
-59473224-a0ea-4b13-94ab-5b676f6c9c48,,normal,Normal,Mode Kelas - Normal,classroom_modes
-172e19c7-680e-4358-8847-4b5781fe43a9,,whiteboard,Whiteboard,Mode Kelas - Whiteboard,classroom_modes
+38337391-d08b-4c61-99cb-8f23398c88cd,,administrator,Administrator,Administrator,people
+88aafa46-9489-4495-90e5-ac2e3798440c,,tutor,Tutor,Tutor,people
+7ffc57e8-6c73-4838-96de-ddb684203cc1,,customer,Customer,Pelanggan,people
+142c3290-d082-467b-8250-9adafc301e39,,category-provinces-create,category-provinces-create,Kategori Provinsi - Buat,permissions
+682c5a9e-aa0d-44b7-92c1-902257cee670,,category-provinces-read,category-provinces-read,Kategori Provinsi - Baca,permissions
+a65e6e26-4e91-45cb-829b-27305b4881ad,,category-provinces-update,category-provinces-update,Kategori Provinsi - Ubah,permissions
+a2868edc-c852-45cb-b186-8c1cd8f735e4,,category-provinces-delete,category-provinces-delete,Kategori Provinsi - Hapus,permissions
+7d6178ab-4a36-4c60-a8db-e252350847d8,,category-cities-create,category-cities-create,Kategori Kota - Buat,permissions
+9d0cbc68-75fd-4478-b5f2-2d821eaa5e96,,category-cities-read,category-cities-read,Kategori Kota - Baca,permissions
+427662b1-3f58-4b92-9f29-30234cd3d06b,,category-cities-update,category-cities-update,Kategori Kota - Ubah,permissions
+a47ed331-9692-490a-b88d-9eed9bd0dba3,,category-cities-delete,category-cities-delete,Kategori Kota - Hapus,permissions
+804e311a-ac39-4680-be7a-a6a468b7f52a,,category-courses-create,category-course-create,kursus - Buat,permissions
+b59c89bd-6257-4612-a569-6fe3c4d062d4,,category-courses-read,category-course-read,kursus - Baca,permissions
+2a506287-bc09-444f-864d-c65c9c340222,,category-courses-update,category-course-update,kursus - Ubah,permissions
+e349773d-d05a-4b4a-88db-de5d2ffdb768,,category-courses-delete,category-course-delete,kursus - Hapus,permissions
+db8a4ac8-64c8-433d-859d-3693d0e3e826,,category-course_levels-create,category-course-level-create,Kategori Level Kursus - Buat,permissions
+650913d5-1e3c-4592-b453-d48438b0e5c2,,category-course_levels-read,category-course-level-read,Kategori Level Kursus - Baca,permissions
+ec0e7acd-a8d8-442f-b0ea-22b8ff9a603d,,category-course_levels-update,category-course-level-update,Kategori Level Kursus - Ubah,permissions
+cb26c463-24c3-4331-a88d-b9d83652a024,,category-course_levels-delete,category-course-level-delete,Kategori Level Kursus - Hapus,permissions
+c4a960c6-89d4-4cbe-83b8-70c8bfc92765,,access-right-create,access-right-create,Hak Akses - Buat,permissions
+8acf9ed9-82cd-4c65-900c-75d5e2465cf7,,access-right-read,access-right-read,Hak Akses - Baca,permissions
+68911eb2-7cfb-47ee-8869-589c1509a4f8,,access-right-update,access-right-update,Hak Akses - Ubah,permissions
+d03d3ddd-b399-453d-b817-a03d05c0e53a,,access-right-delete,access-right-delete,Hak Akses - Hapus,permissions
+2b82f9b5-e803-484a-8d26-cc5bdb9c4c63,,tutor-create,tutor-create,Tutor - Buat,permissions
+87f06216-69cc-4c65-85e5-cbfad61d6345,,tutor-read,tutor-read,Tutor - Baca,permissions
+73fe4721-3e41-499e-b047-9b81aa08fd13,,tutor-update,tutor-update,Tutor - Ubah,permissions
+22c33c4e-fb47-4c82-a1a2-279e7c7ab80e,,tutor-delete,tutor-delete,Tutor - Hapus,permissions
+7c7c7aa2-f246-4138-b614-ade302d58d04,,administrator,Administrator,Administrator,permission_groups
+fdb709c5-611b-4d7e-bead-835a553b0109,,tutor,Tutor,Tutor,permission_groups

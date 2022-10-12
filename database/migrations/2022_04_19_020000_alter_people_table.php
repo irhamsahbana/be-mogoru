@@ -17,6 +17,10 @@ class AlterPeopleTable extends Migration
             $table->index('category_id');
             $table->foreign('category_id')
             ->references('id')->on('categories');
+
+            $table->index('city_id');
+            $table->foreign('city_id')
+            ->references('id')->on('categories');
         });
     }
 
@@ -30,6 +34,9 @@ class AlterPeopleTable extends Migration
         Schema::table('people', function (Blueprint $table) {
             $table->dropForeign(['category_id']);
             $table->dropIndex(['category_id']);
+
+            $table->dropForeign(['city_id']);
+            $table->dropIndex(['city_id']);
         });
     }
 }

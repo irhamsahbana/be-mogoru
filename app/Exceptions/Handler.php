@@ -75,7 +75,7 @@ class Handler extends ExceptionHandler
         $response = new Response();
         return $response->json(
             null,
-            $msg,
+            $e->getMessage() ?? $msg,
             $statusCode,
             get_class($e),
             $e->getFile(),

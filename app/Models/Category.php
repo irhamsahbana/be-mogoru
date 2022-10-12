@@ -12,4 +12,10 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 class Category extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 }
