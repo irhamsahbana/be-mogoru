@@ -3,6 +3,7 @@
 namespace App\Http\Repositories\Finder;
 
 use App\Libs\HasAccessControl;
+use App\Models\Person;
 
 abstract class AbstractFinder
 {
@@ -13,6 +14,8 @@ abstract class AbstractFinder
     protected bool $isUsePagination = false;
     protected $orderBy;
     protected string $orderType = 'asc';
+
+    protected bool $isPublic = false;
 
     private int $page = 1;
     private int $perPage = 10;
@@ -65,7 +68,7 @@ abstract class AbstractFinder
         $this->keyword = $keyword;
     }
 
-    public function get()
+    public function get() : ?object
     {
         $this->doQuery();
 

@@ -18,7 +18,7 @@ class TutorService
         return $this->tutorRepo->upsert($this->prepareData($data));
     }
 
-    public function find($id)
+    public function find(string $id)
     {
         return $this->tutorRepo->find($id);
     }

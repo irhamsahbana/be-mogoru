@@ -27,7 +27,9 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('categories', [CategoryController::class, 'index']);
 
     Route::put('tutors', [TutorController::class, 'upsert']);
-
+    Route::get('public/tutors', [TutorController::class, 'indexPublic']);
+    Route::get('tutors', [TutorController::class, 'index']);
+    Route::get('tutors/{id}', [TutorController::class, 'show']);
     /**
      * Dangerous route, only for development purpose
      * Should be removed in production

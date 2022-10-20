@@ -30,24 +30,32 @@ implements TutorRepositoryContract
     public function find($id) : ?array
     {
         $person = Person::with(['category', 'city'])
-            ->where('id', $id)
-            ->first()->toArray() ?? null;
+                        ->where('id', $id)
+                        ->first()
+                        ->makeHidden(['category_id', 'city_id'])
+                        ->toArray() ?? null;
 
         if ($person) {
             $person['social_medias'] = explode(',', $person['social_medias']);
-            $person['course_ids'] = Meta::where('table_name', $this->person->getTable())
-                                        ->where('fk_id', $person['id'])
-                                        ->where('key', 'course_id')
-                                        ->pluck('value')
-                                        ->toArray();
 
-            $person['course_level_ids'] = Meta::where('table_name', $this->person->getTable())
-                                        ->where('fk_id', $person['id'])
-                                        ->where('key', 'course_level_id')
-                                        ->pluck('value')
-                                        ->toArray();
+            $courseIds = Meta::select('value')
+                                ->where('table_name', $this->person->getTable())
+                                ->where('fk_id', $person['id'])
+                                ->where('key', 'course_id')
+                                ->pluck('value')
+                                ->toArray();
+            $person['courses'] = Category::whereIn('id', $courseIds)->get()->toArray();
 
-            $person['schedules'] = Meta::where('table_name', $this->person->getTable())
+            $courseLevelIds = Meta::select('value')
+                                    ->where('table_name', $this->person->getTable())
+                                    ->where('fk_id', $person['id'])
+                                    ->where('key', 'course_level_id')
+                                    ->pluck('value')
+                                    ->toArray();
+            $person['course_levels'] = Category::whereIn('id', $courseLevelIds)->get()->toArray();
+
+            $person['schedules'] = Meta::select('value')
+                                        ->where('table_name', $this->person->getTable())
                                         ->where('fk_id', $person['id'])
                                         ->where('key', 'schedule')
                                         ->pluck('value')
