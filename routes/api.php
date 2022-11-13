@@ -19,6 +19,7 @@ use App\Http\Controllers\Api\{
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post("auth/login", [AuthController::class, 'attempt']);
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::get('auth/logout', [AuthController::class, 'logout']);
@@ -37,5 +38,6 @@ Route::middleware('auth:sanctum')->group(function() {
     // Route::get('seed-provinces-cities', [GetCitiesController::class, 'provincesAndCities']);
 });
 
+Route::get('public-tutors', [TutorController::class, 'publicIndex']);
 
-Route::post("auth/login", [AuthController::class, 'attempt']);
+

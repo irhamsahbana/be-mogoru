@@ -61,6 +61,51 @@ class TutorController extends Controller
 
     }
 
+    public function publicIndex(Request $request)
+    {
+        $finder = new PersonFinder();
+        $finder->setCategory('tutor');
+
+        if (isset($request->order_by))
+            $finder->setOrderBy($request->order_by);
+
+        if (isset($request->order_type))
+            $finder->setOrderType($request->order_type);
+
+        if (isset($request->paginate)) {
+            $finder->usePagination($request->paginate);
+
+            if (isset($request->page))
+                $finder->setPage($request->page);
+
+            if (isset($request->per_page))
+                $finder->setPerPage($request->per_page);
+        }
+
+        $paginator = $finder->get();
+        $data = [];
+
+        if (!$finder->isUsePagination()) {
+            foreach ($paginator as $item) {
+                $data[] = $item;
+            }
+
+        } else {
+            foreach ($paginator->items() as $item) {
+                $data[] = $item;
+            }
+
+            foreach ($paginator->toArray() as $key => $value)
+                if ($key != 'data')
+                    $data['pagination'][$key] = $value;
+        }
+
+        $response = new Response;
+        return $response->json($data, "success get tutor data");
+
+    }
+
+
     public function upsert(Request $request)
     {
         $response = new Response();
@@ -130,6 +175,16 @@ class TutorController extends Controller
         $response = new Response();
         $this->filterByAccessControl('tutor-read');
 
+        $repository = new Tutor();
+        $service = new TutorService($repository);
+        $data = $service->find($id);
+
+        return $response->json($data, 'success get tutor data');
+    }
+
+    public function publicShow($id)
+    {
+        $response = new Response();
         $repository = new Tutor();
         $service = new TutorService($repository);
         $data = $service->find($id);
