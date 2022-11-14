@@ -39,6 +39,7 @@ class TutorService
             'course_level_ids' => $data->course_level_ids,
             'schedules' => $data->schedules,
             'fee' => $data->fee,
+            'file' => $data->file,
         ];
 
         return (object) $entity;

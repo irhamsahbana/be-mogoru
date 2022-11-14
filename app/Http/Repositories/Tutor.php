@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use App\Models\Meta;
 use App\Models\Person;
+use Illuminate\Support\Facades\Storage;
 
 class Tutor extends AbstractRepository
 implements TutorRepositoryContract
@@ -83,6 +84,18 @@ implements TutorRepositoryContract
             $person->bio = $data->bio;
             $person->social_medias = $data->social_medias;
             $person->fee = $data->fee;
+
+            if ($data->file) { // if user upload new file
+                if ($person->file) { // if user already has file
+                    $filename = str_replace('storage/', '', $person->file);
+                    if (Storage::exists($filename)) // check if file exists
+                        Storage::delete($filename); //if exists, delete it
+                }
+
+                $data->file->storeAs('public/tutors', $data->file->getClientOriginalName().'-'.time().'.'.$data->file->getClientOriginalExtension());
+                $person->file = 'storage/tutors/'.$data->file->getClientOriginalName().'-'.time().'.'.$data->file->getClientOriginalExtension();
+            }
+
             $person->save();
 
             // course (meta) & course level (meta)

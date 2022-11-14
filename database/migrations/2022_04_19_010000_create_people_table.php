@@ -25,6 +25,7 @@ class CreatePeopleTable extends Migration
             $table->string('bio')->nullable();
             $table->string('social_medias')->nullable();
             $table->decimal('fee', 15, 2, true)->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

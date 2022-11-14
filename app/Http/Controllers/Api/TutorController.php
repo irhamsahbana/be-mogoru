@@ -113,6 +113,15 @@ class TutorController extends Controller
 
         $this->filterByAccessControl('tutor-create');
 
+        // decode file
+        $file = $request->file('file');
+        if ($file) {
+            $fields = json_decode($fields['data'], true);
+            $fields['file'] = $file;
+        } else {
+            $fields = json_decode($fields['data'], true);
+        }
+
         $rules = [
             'id' => 'required|uuid',
             'name' => 'required|string',
@@ -151,17 +160,13 @@ class TutorController extends Controller
             ],
             'schedules' => 'required|array|min:1',
             'fee' => 'required|numeric',
+            'file' => ['nullable', 'file', 'mimes:jpeg,jpg,png', 'max:1048'],
         ];
 
         $validator = Validator::make($fields, $rules);
 
-        if ($validator->fails()) {
-            return $response->json(
-                null,
-                $validator->errors(),
-                HttpResponse::HTTP_UNPROCESSABLE_ENTITY
-            );
-        }
+        if ($validator->fails())
+            return $response->json(null, $validator->errors(), HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
 
         $repository = new Tutor();
         $service = new TutorService($repository);
