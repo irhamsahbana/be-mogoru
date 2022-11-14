@@ -109,17 +109,16 @@ class TutorController extends Controller
     public function upsert(Request $request)
     {
         $response = new Response();
-        $fields = $request->all();
-
+        $fields = [];
         $this->filterByAccessControl('tutor-create');
 
         // decode file
         $file = $request->file('file');
+        $fields = json_decode($request->data, true);
         if ($file) {
-            $fields = json_decode($fields['data'], true);
             $fields['file'] = $file;
         } else {
-            $fields = json_decode($fields['data'], true);
+            $fields['file'] = null;
         }
 
         $rules = [
