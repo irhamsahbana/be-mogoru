@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 use App\Libs\Response;
 
@@ -121,6 +122,8 @@ class TutorController extends Controller
             $fields['file'] = null;
         }
 
+        dd($fields);
+
         $rules = [
             'id' => 'required|uuid',
             'name' => 'required|string',
@@ -134,12 +137,12 @@ class TutorController extends Controller
                 'required',
                 'string',
                 'min:4',
-                Rule::unique('people', 'phone')->ignore($fields['id']),
+                Rule::unique('people', 'phone')->ignore($fields['id'] ?? Str::uuid()->toString()),
             ],
             'email' => [
                 'required',
                 'email',
-                Rule::unique('people', 'email')->ignore($fields['id']),
+                Rule::unique('people', 'email')->ignore($fields['id'] ?? Str::uuid()->toString()),
             ],
             'bio' => 'required|string',
             'social_medias' => 'nullable|array',
