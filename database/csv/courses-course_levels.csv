@@ -10,7 +10,7 @@ d7e16cae-d364-45b5-8028-04c8856c15f1,,ips,IPS,,courses
 3fd144c9-f66d-453d-b46e-f75e859da861,,sosiologi,Sosiologi,,courses
 8b22ef2f-bf70-48df-8cd8-2bccdd1bfc64,,ekonomi,Ekonomi,,courses
 b67908ad-50d3-424b-846b-ddf74ea4b9a9,,sejarah,Sejarah,,courses
-7fe686b3-29b4-4dd8-83d8-a19e9ba0b799,,sd,SD,,course_levels
-fccacace-6a99-41a5-9a1e-6aed36668668,,smp,SMP,,course_levels
-183ccb6a-646f-428c-8a80-8d51aa8d1be4,,sma,SMA,,course_levels
-be1e3671-0b95-4c0f-aec9-3aa7543e4c5b,,s1,S1,,course_levels
+7fe686b3-29b4-4dd8-83d8-a19e9ba0b799,,sd,SD,1,course_levels
+fccacace-6a99-41a5-9a1e-6aed36668668,,smp,SMP,2,course_levels
+183ccb6a-646f-428c-8a80-8d51aa8d1be4,,sma,SMA,3,course_levels
+be1e3671-0b95-4c0f-aec9-3aa7543e4c5b,,s1,S1,4,course_levels
